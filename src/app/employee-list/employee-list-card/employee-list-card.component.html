@@ -1,3 +1,8 @@
-<p>
-  employee-list-card works!
-</p>
+<div class="card" fxLayout="row" fxLayout="center start">
+  <div fxFlex="1 0 5%">
+    <a (click)="edit(employee.id)">
+      <fa name="edit"></fa>
+    </a>
+  </div>
+  <div fxFlex="0 1 95%">{{ employee.lastName }}, {{employee.firstName }}</div>
+</div>

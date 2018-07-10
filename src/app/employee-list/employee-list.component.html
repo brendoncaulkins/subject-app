@@ -1,8 +1,6 @@
-<p>
-  employee-list works!
-</p>
-
-<app-employee-list-card></app-employee-list-card>
-<app-employee-list-card></app-employee-list-card>
-<app-employee-list-card></app-employee-list-card>
-<app-employee-list-card></app-employee-list-card>
+<h3>Employee List</h3>
+<div fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap="10px">
+  <div fxFlex *ngFor="let employee of employeeList.value">
+    <app-employee-list-card [employee]="employee"></app-employee-list-card>
+  </div>
+</div>
