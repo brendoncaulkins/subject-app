@@ -1,8 +1,11 @@
 import { NgModule } from '@angular/core'
+import { FlexLayoutModule } from '@angular/flex-layout'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { BrowserModule } from '@angular/platform-browser'
 
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
+import { EmployeeDetailComponent } from './employee-detail/employee-detail.component'
 import {
   EmployeeListCardComponent,
 } from './employee-list/employee-list-card/employee-list-card.component'
@@ -15,8 +18,7 @@ import {
   AddressSuggestionsComponent,
 } from './info-collection/address-form/address-suggestions/address-suggestions.component'
 import { InfoCollectionComponent } from './info-collection/info-collection.component'
-import { NotFoundComponent } from './not-found/not-found.component';
-import { EmployeeDetailComponent } from './employee-detail/employee-detail.component'
+import { NotFoundComponent } from './not-found/not-found.component'
 
 @NgModule({
   declarations: [
@@ -33,7 +35,13 @@ import { EmployeeDetailComponent } from './employee-detail/employee-detail.compo
     EmployeeListCardComponent,
     EmployeeDetailComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
+    FlexLayoutModule,
+    AppRoutingModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

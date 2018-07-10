@@ -1,5 +1,27 @@
-<p>
-  address-form works!
-</p>
+<h3>Employee Address:</h3>
+<form [formGroup]="addressFormGroup">
+  <div fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap="25px">
+    <div fxFlex>
+      <label for="address-line-1">Address Line 1:</label>
+      <input id="address-line-1" type="text" formControlName="addressLine1">
+    </div>
+    <div fxFlex>
+      <label for="address-line-2">Address Line 2:</label>
+      <input id="address-line-2" type="text" formControlName="addressLine2">
+    </div>
+    <div fxFlex>
+      <label for="address-city">City:</label>
+      <input id="address-city" type="text" formControlName="city">
+    </div>
+    <div fxFlex>
+      <label for="address-state">State:</label>
+      <input id="address-state" type="text" formControlName="state">
+    </div>
+    <div fxFlex>
+      <label for="address-zip-code">Zip Code:</label>
+      <input id="address-zip-code" type="text" formControlName="zipCode">
+    </div>
+  </div>
+</form>
 
 <app-address-suggestions></app-address-suggestions>

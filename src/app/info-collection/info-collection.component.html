@@ -1,5 +1,23 @@
-<p>
-  info-collection works!
-</p>
-
-<app-address-form></app-address-form>
+<h3>Employee Name:</h3>
+<div fxLayout="column" fxLayoutAlign="start stretch">
+  <div fxFlex>
+    <form [formGroup]="employeeForm">
+      <div fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap="25px">
+        <div fxFlex>
+          <label for="employee-first-name">First Name:</label>
+          <input id="employee-first-name" type="text" formControlName="firstName">
+        </div>
+        <div fxFlex>
+          <label for="employee-last-name">Last Name:</label>
+          <input id="employee-last-name" type="text" formControlName="lastName">
+        </div>
+      </div>
+    </form>
+  </div>
+  <div fxFlex>
+    <app-address-form [addressFormGroup]="employeeForm.get('address')"></app-address-form>
+  </div>
+  <div fxFlex fxFlexAlign="end">
+    <button type="submit" (click)="onSubmitForm()">Submit</button>
+  </div>
+</div>

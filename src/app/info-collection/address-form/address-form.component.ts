@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core'
+import { FormGroup } from '@angular/forms'
 
 @Component({
   selector: 'app-address-form',
   templateUrl: './address-form.component.html',
-  styles: []
+  styles: [],
 })
 export class AddressFormComponent implements OnInit {
+  @Input() addressFormGroup: FormGroup
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }
