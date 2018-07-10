@@ -4,6 +4,8 @@ import { FlexLayoutModule } from '@angular/flex-layout'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { BrowserModule } from '@angular/platform-browser'
 
+import { AngularFontAwesomeModule } from 'angular-font-awesome'
+
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
 import { EmployeeDetailComponent } from './employee-detail/employee-detail.component'
@@ -44,6 +46,7 @@ import { EmployeeService } from './services/employee.service'
     ReactiveFormsModule,
     FlexLayoutModule,
     HttpClientModule,
+    AngularFontAwesomeModule,
     AppRoutingModule,
   ],
   providers: [AddressValidationService, EmployeeService],
