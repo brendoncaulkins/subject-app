@@ -8,13 +8,15 @@ export interface IEmployee {
   address: IAddress
 }
 
-export class Employee implements IEmployee, Storable<IEmployee> {
+export class Employee extends Storable<IEmployee> implements IEmployee {
   constructor(
     public id: string = null,
     public firstName: string = null,
     public lastName: string = null,
     public address: Address = new Address()
-  ) {}
+  ) {
+    super()
+  }
 
   fromJSON(json: any): Employee {
     this.id = json.id ? json.id : null

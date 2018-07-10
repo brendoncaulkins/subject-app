@@ -1,5 +1,7 @@
-export interface IPage<T> {
-  content: T[]
+import { Employee } from './employee.model'
+
+export interface IEmployeePage {
+  content: Employee[]
   first: boolean
   last: boolean
   number: number
@@ -11,10 +13,9 @@ export interface IPage<T> {
   totalPages: number
 }
 
-export class Page<T> implements IPage<T> {
+export class EmployeePage implements IEmployeePage {
   constructor(
-    public entityType: new () => T,
-    public content: T[] = null,
+    public content: Employee[] = null,
     public first: boolean = false,
     public last: boolean = false,
     public number: number = NaN,
@@ -28,7 +29,7 @@ export class Page<T> implements IPage<T> {
 
   fromJSON(json: any): any {
     this.content = json.content ? [] : null
-    json.content.forEach(item => this.content.push(new this.entityType().fromJSON(item)))
+    json.content.forEach(item => this.content.push(new Employee().fromJSON(item)))
     this.first = json.first ? json.first : false
     this.last = json.last ? json.last : false
     this.number = json.number ? json.number : 0

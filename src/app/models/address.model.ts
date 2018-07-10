@@ -8,14 +8,16 @@ export interface IAddress {
   zipCode: string
 }
 
-export class Address implements IAddress, Storable<IAddress> {
+export class Address extends Storable<IAddress> implements IAddress {
   constructor(
     public addressLine1: string = null,
     public addressLine2: string = null,
     public city: string = null,
     public state: string = null,
     public zipCode: string = null
-  ) {}
+  ) {
+    super()
+  }
 
   fromJSON(json: any): Address {
     this.addressLine1 = json.addressLine1 ? json.addressLine1 : null

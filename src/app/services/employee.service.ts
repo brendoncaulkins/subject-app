@@ -3,8 +3,8 @@ import { Injectable } from '@angular/core'
 
 import { Observable } from 'rxjs'
 
+import { EmployeePage } from '../models/employee-page.model'
 import { Employee } from '../models/employee.model'
-import { Page } from '../models/page.model'
 
 @Injectable()
 export class EmployeeService {
@@ -12,8 +12,8 @@ export class EmployeeService {
 
   constructor(private httpClient: HttpClient) {}
 
-  listPage(page: number = 0, size: number = 10): Observable<Page<Employee>> {
-    return this.httpClient.get<Page<Employee>>(this.buildUrl(), {
+  listPage(page: number = 0, size: number = 10): Observable<EmployeePage> {
+    return this.httpClient.get<EmployeePage>(this.buildUrl(), {
       params: { size: String(size), page: String(page) },
     })
   }
