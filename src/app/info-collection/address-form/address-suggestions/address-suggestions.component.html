@@ -1,3 +1,8 @@
-<p>
-  address-suggestions works!
-</p>
+<div *ngIf="!!suggestions" class="address-card-container" fxLayout="row" fxLayoutAlign="space-around center" fxLayoutGap="10px">
+  <div class="address-card" *ngFor="let address of suggestions" fxFlex="1 1 33">
+    <p>{{ address.addressLine1 }}</p>
+    <p>{{ address.addressLine2 }}</p>
+    <p>{{ address.city }}, {{ address.state }} {{address.zipCode }}</p>
+    <button type="submit" (click)="addressSelected.next(address)">Select</button>
+  </div>
+</div>

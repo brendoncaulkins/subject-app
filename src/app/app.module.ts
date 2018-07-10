@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http'
 import { NgModule } from '@angular/core'
 import { FlexLayoutModule } from '@angular/flex-layout'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
@@ -19,6 +20,8 @@ import {
 } from './info-collection/address-form/address-suggestions/address-suggestions.component'
 import { InfoCollectionComponent } from './info-collection/info-collection.component'
 import { NotFoundComponent } from './not-found/not-found.component'
+import { AddressValidationService } from './services/address-validation.service'
+import { EmployeeService } from './services/employee.service'
 
 @NgModule({
   declarations: [
@@ -40,9 +43,10 @@ import { NotFoundComponent } from './not-found/not-found.component'
     FormsModule,
     ReactiveFormsModule,
     FlexLayoutModule,
+    HttpClientModule,
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [AddressValidationService, EmployeeService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

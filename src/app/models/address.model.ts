@@ -36,4 +36,14 @@ export class Address implements IAddress, Storable<IAddress> {
       zipCode: this.zipCode,
     }
   }
+
+  isEmpty(): boolean {
+    return (
+      !this.addressLine1 &&
+      !this.addressLine2 &&
+      !this.city &&
+      !this.state &&
+      !this.zipCode
+    )
+  }
 }

@@ -1,0 +1,19 @@
+.address-card-container {
+  width: 100%;
+  background-color: #eee;
+  border-radius: 10px;
+}
+
+.address-card {
+  width: 33%;
+  text-align: center;
+  background-color: white;
+  border: solid darkblue 1px;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.error-message {
+  color: darkred;
+  font-weight: bold;
+}

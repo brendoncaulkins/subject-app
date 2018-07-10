@@ -28,6 +28,6 @@
       </div>
     </form>
   </div>
-  <div fxFlex>
-    <app-address-suggestions></app-address-suggestions>
+  <div fxFlex fxFill>
+    <app-address-suggestions (addressSelected)="setAddress($event)"></app-address-suggestions>
   </div>
