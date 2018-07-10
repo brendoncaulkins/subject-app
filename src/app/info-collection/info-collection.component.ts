@@ -35,6 +35,6 @@ export class InfoCollectionComponent implements OnInit {
   }
 
   onSubmitForm() {
-    console.log(this.employeeForm.value)
+    console.log(new Employee().fromJSON(this.employeeForm.value))
   }
 }
