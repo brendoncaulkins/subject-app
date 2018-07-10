@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core'
 import { FormBuilder, FormGroup } from '@angular/forms'
 
 import { Employee } from '../models/employee.model'
+import { EmployeeService } from '../services/employee.service'
 
 @Component({
   selector: 'app-info-collection',
@@ -12,7 +13,7 @@ export class InfoCollectionComponent implements OnInit {
   employeeForm: FormGroup
   employee: Employee
 
-  constructor() {}
+  constructor(private employeeService: EmployeeService) {}
 
   ngOnInit() {
     this.employee = new Employee()
@@ -22,6 +23,7 @@ export class InfoCollectionComponent implements OnInit {
   private buildForm(): FormGroup {
     const builder = new FormBuilder()
     return builder.group({
+      id: [this.employee.id],
       firstName: [this.employee.firstName],
       lastName: [this.employee.lastName],
       address: builder.group({
@@ -35,6 +37,10 @@ export class InfoCollectionComponent implements OnInit {
   }
 
   onSubmitForm() {
-    console.log(new Employee().fromJSON(this.employeeForm.value))
+    const employee = new Employee().fromJSON(this.employeeForm.value)
+    console.log(employee)
+    this.employeeService
+      .save(employee)
+      .subscribe(success => console.log(success), error => console.error(error))
   }
 }
