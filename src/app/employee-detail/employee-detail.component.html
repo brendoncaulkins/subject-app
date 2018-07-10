@@ -1,3 +1,12 @@
-<p>
-  employee-detail works!
-</p>
+<div [hidden]="employee.firstName">
+  <fa name="circle-o-notch" animation="spin"></fa> Loading...
+</div>
+<div *ngIf="employee.firstName">
+  <h3>Details for {{ employee.lastName }}, {{ employee.firstName }}</h3>
+  <h5>Address:</h5>
+  <pre>
+{{ employee.address.addressLine1}}
+{{ employee.address.addressLine2}}
+{{ employee.address.city }}, {{ employee.address.state }} {{ employee.address.zipCode }}
+  </pre>
+</div>
