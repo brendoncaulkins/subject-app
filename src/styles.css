@@ -84,3 +84,11 @@ input {
 input.full-width {
   width: 100%;
 }
+
+.message-container {
+  height: 0;
+}
+
+.error {
+  color: darkred;
+}

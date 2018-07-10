@@ -28,6 +28,14 @@
       </div>
     </form>
   </div>
+  <div fxFlex class="message-container">
+    <div *ngIf="addressFormGroup.hasError('invalidAddress')" class="error">
+      <fa name="exclamation-triangle"></fa> {{ addressFormGroup.getError( 'invalidAddress') }}
+    </div>
+    <div *ngIf="validationState.value === 'CHECKING'">
+      <fa name="circle-o-notch" animation="spin"></fa> Checking Address...
+    </div>
+  </div>
   <div fxFlex fxFill>
     <app-address-suggestions (addressSelected)="setAddress($event)"></app-address-suggestions>
   </div>

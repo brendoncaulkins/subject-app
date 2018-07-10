@@ -52,7 +52,8 @@ export class AddressValidationService {
       addresses.push(
         new Address().fromJSON({
           addressLine1: a.delivery_line_1 ? a.delivery_line_1 : null,
-          addressLine2: a.delivery_line_2 ? a.delivery_line_2 : null,
+          addressLine2:
+            a.delivery_line_2 && a.delivery_line_2 != 'Null' ? a.delivery_line_2 : null,
           city: a.components
             ? a.components.city_name
               ? a.components.city_name
