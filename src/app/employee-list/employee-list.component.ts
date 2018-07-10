@@ -19,9 +19,9 @@ export class EmployeeListComponent implements OnInit {
 
   ngOnInit() {
     this.employeesService
-      .all()
+      .listPage()
       .subscribe(
-        list => this.employeeList.next(list),
+        list => this.employeeList.next(list.content),
         error => this.employeeList.error(error)
       )
   }
