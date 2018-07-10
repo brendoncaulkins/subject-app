@@ -1,5 +1,5 @@
 <h3>Employee Name:</h3>
-<div fxLayout="column" fxLayoutAlign="start stretch">
+<div fxLayout="column" fxLayoutAlign="start start" class='form-container'>
   <div fxFlex>
     <form [formGroup]="employeeForm">
       <div fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap="25px">
@@ -17,7 +17,7 @@
   <div fxFlex>
     <app-address-form [addressFormGroup]="employeeForm.get('address')"></app-address-form>
   </div>
-  <div fxFlex fxFlexAlign="end">
+  <div fxFlex>
     <button type="submit" (click)="onSubmitForm()">Submit</button>
   </div>
 </div>
