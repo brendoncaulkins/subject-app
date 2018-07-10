@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import { FormBuilder, FormGroup } from '@angular/forms'
+import { ActivatedRoute } from '@angular/router'
 
 import { Employee } from '../models/employee.model'
 import { EmployeeService } from '../services/employee.service'
@@ -13,10 +14,14 @@ export class InfoCollectionComponent implements OnInit {
   employeeForm: FormGroup
   employee: Employee
 
-  constructor(private employeeService: EmployeeService) {}
+  constructor(private employeeService: EmployeeService, private route: ActivatedRoute) {
+    this.employee = new Employee()
+    if (this.route.snapshot.data.employee) {
+      this.employee.fromJSON(this.route.snapshot.data.employee)
+    }
+  }
 
   ngOnInit() {
-    this.employee = new Employee()
     this.employeeForm = this.buildForm()
   }
 
