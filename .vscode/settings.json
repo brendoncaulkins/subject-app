@@ -1,0 +1,35 @@
+{
+  "auto-close-tag.SublimeText3Mode": true,
+  "debug.openExplorerOnEnd": true,
+  "editor.autoIndent": true,
+  "editor.tabSize": 2,
+  "editor.cursorBlinking": "solid",
+  "editor.formatOnType": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.rulers": [
+    90,
+    140
+  ],
+  "explorer.openEditors.visible": 0,
+  "files.trimTrailingWhitespace": true,
+  "files.autoSave": "onFocusChange",
+  "git.enableSmartCommit": true,
+  "git.confirmSync": false,
+  "html.autoClosingTags": false,
+  "prettier.printWidth": 90,
+  "prettier.singleQuote": true,
+  "prettier.semi": false,
+  "prettier.trailingComma": "es5",
+  "typescriptHero.imports.grouping": [
+        "/@angular/",
+        "Modules",
+        "Plains",
+        "Workspace"
+    ],
+  "typescriptHero.imports.insertSemicolons": false,
+  "typescriptHero.imports.multiLineWrapThreshold": 90,
+  "typescriptHero.imports.organizeOnSave": true,
+  "typescriptHero.imports.stringQuoteStyle": "'",
+  "workbench.iconTheme": "material-icon-theme",
+}
