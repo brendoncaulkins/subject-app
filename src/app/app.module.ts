@@ -23,7 +23,8 @@ import {
 import { InfoCollectionComponent } from './info-collection/info-collection.component'
 import { NotFoundComponent } from './not-found/not-found.component'
 import { AddressValidationService } from './services/address-validation.service'
-import { EmployeeService } from './services/employee.service'
+import { EmployeeService } from './services/employee.service';
+import { ListControlsComponent } from './employee-list/list-controls/list-controls.component'
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { EmployeeService } from './services/employee.service'
     EmployeeListComponent,
     EmployeeListCardComponent,
     EmployeeDetailComponent,
+    ListControlsComponent,
   ],
   imports: [
     BrowserModule,
