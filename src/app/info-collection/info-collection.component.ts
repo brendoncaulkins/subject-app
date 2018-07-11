@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup } from '@angular/forms'
 import { ActivatedRoute } from '@angular/router'
 
 import { Employee } from '../models/employee.model'
-import { EmployeeService } from '../services/employee.service'
+import { EmployeeService } from '../services/employee/employee.service'
 
 @Component({
   selector: 'app-info-collection',

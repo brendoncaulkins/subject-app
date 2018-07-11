@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup } from '@angular/forms'
 
 import { Subscription } from 'rxjs'
 
-import { EmployeeService, PageOptions } from '../../services/employee.service'
+import { EmployeeService, PageOptions } from '../../services/employee/employee.service'
 
 export const pageSizesConst = [10, 25, 50, 100]
 export const sortByConst = [

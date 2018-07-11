@@ -4,7 +4,7 @@ import { ActivatedRouteSnapshot, Resolve } from '@angular/router'
 import { Observable } from 'rxjs'
 
 import { Employee } from '../models/employee.model'
-import { EmployeeService } from '../services/employee.service'
+import { EmployeeService } from '../services/employee/employee.service'
 
 @Injectable()
 export class EmployeeResolve implements Resolve<Employee> {

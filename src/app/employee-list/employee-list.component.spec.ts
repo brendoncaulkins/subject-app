@@ -3,8 +3,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 
 import { AngularFontAwesomeModule } from 'angular-font-awesome'
 
-import { EmployeeService } from '../services/employee.service'
-import { MockEmployeesService } from '../services/employee.service.fake'
+import { EmployeeService } from '../services/employee/employee.service'
+import { MockEmployeesService } from '../services/employee/employee.service.fake'
 import {
   EmployeeListCardComponent,
 } from './employee-list-card/employee-list-card.component'

@@ -6,8 +6,8 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome'
 
 import { AddressValidationService } from '../services/address-validation/address-validation.service'
 import { MockAddressValidationService } from '../services/address-validation/address-validation.service.fake'
-import { EmployeeService } from '../services/employee.service'
-import { MockEmployeesService } from '../services/employee.service.fake'
+import { EmployeeService } from '../services/employee/employee.service'
+import { MockEmployeesService } from '../services/employee/employee.service.fake'
 import { AddressFormComponent } from './address-form/address-form.component'
 import {
   AddressSuggestionsComponent,

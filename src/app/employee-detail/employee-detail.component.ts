@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router'
 import { Subscription } from 'rxjs'
 
 import { Employee } from '../models/employee.model'
-import { EmployeeService } from '../services/employee.service'
+import { EmployeeService } from '../services/employee/employee.service'
 
 @Component({
   selector: 'app-employee-detail',

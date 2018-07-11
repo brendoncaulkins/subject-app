@@ -1,7 +1,7 @@
 import { BehaviorSubject, Observable, of } from 'rxjs'
 
-import { EmployeePage } from '../models/employee-page.model'
-import { Employee } from '../models/employee.model'
+import { EmployeePage } from '../../models/employee-page.model'
+import { Employee } from '../../models/employee.model'
 import { IEmployeesService, PageOptions } from './employee.service'
 
 export class MockEmployeesService implements IEmployeesService {

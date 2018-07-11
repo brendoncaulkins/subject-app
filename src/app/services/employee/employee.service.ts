@@ -3,8 +3,8 @@ import { Injectable } from '@angular/core'
 
 import { BehaviorSubject, Observable } from 'rxjs'
 
-import { EmployeePage } from '../models/employee-page.model'
-import { Employee } from '../models/employee.model'
+import { EmployeePage } from '../../models/employee-page.model'
+import { Employee } from '../../models/employee.model'
 
 export interface PageOptions {
   page: string

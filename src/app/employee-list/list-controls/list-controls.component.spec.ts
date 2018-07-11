@@ -1,8 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 
-import { EmployeeService } from '../../services/employee.service'
-import { MockEmployeesService } from '../../services/employee.service.fake'
+import { EmployeeService } from '../../services/employee/employee.service'
+import { MockEmployeesService } from '../../services/employee/employee.service.fake'
 import { ListControlsComponent } from './list-controls.component'
 
 describe('ListControlsComponent', () => {

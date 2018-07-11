@@ -28,7 +28,7 @@ import { NotFoundComponent } from './not-found/not-found.component'
 import {
   AddressValidationService,
 } from './services/address-validation/address-validation.service'
-import { EmployeeService } from './services/employee.service'
+import { EmployeeService } from './services/employee/employee.service'
 
 @NgModule({
   declarations: [

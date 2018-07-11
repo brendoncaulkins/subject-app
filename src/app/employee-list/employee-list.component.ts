@@ -3,7 +3,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core'
 import { Subscription } from 'rxjs'
 
 import { EmployeePage } from '../models/employee-page.model'
-import { EmployeeService } from '../services/employee.service'
+import { EmployeeService } from '../services/employee/employee.service'
 
 @Component({
   selector: 'app-employee-list',
