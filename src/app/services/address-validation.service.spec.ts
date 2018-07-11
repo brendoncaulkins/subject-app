@@ -1,15 +1,20 @@
-import { TestBed, inject } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing'
+import { inject, TestBed } from '@angular/core/testing'
 
-import { AddressValidationService } from './address-validation.service';
+import { AddressValidationService } from './address-validation.service'
 
 describe('AddressValidationService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [AddressValidationService]
-    });
-  });
+      imports: [HttpClientTestingModule],
+      providers: [AddressValidationService],
+    })
+  })
 
-  it('should be created', inject([AddressValidationService], (service: AddressValidationService) => {
-    expect(service).toBeTruthy();
-  }));
-});
+  it('should be created', inject(
+    [AddressValidationService],
+    (service: AddressValidationService) => {
+      expect(service).toBeTruthy()
+    }
+  ))
+})

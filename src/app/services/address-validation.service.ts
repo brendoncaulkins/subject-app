@@ -5,8 +5,15 @@ import { BehaviorSubject } from 'rxjs'
 
 import { Address } from '../models/address.model'
 
+export interface IAddressValidationService {
+  validationResults: BehaviorSubject<Address[]>
+
+  checkAddress(address: Address): void
+  clear(): void
+}
+
 @Injectable()
-export class AddressValidationService {
+export class AddressValidationService implements IAddressValidationService {
   private url = 'https://us-street.api.smartystreets.com/street-address'
   private authId = '21102174564513388'
 

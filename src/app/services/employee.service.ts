@@ -13,8 +13,16 @@ export interface PageOptions {
   sortDirection: string
 }
 
+export interface IEmployeesService {
+  currentPage: BehaviorSubject<EmployeePage>
+
+  getPage(options: PageOptions): void
+  get(id: string): Observable<Employee>
+  save(employee: Employee): Observable<Employee>
+}
+
 @Injectable()
-export class EmployeeService {
+export class EmployeeService implements IEmployeesService {
   private tableName = 'employees'
 
   currentPage: BehaviorSubject<EmployeePage>

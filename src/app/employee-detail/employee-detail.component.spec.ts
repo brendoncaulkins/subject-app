@@ -1,25 +1,31 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing'
+import { RouterTestingModule } from '@angular/router/testing'
 
-import { EmployeeDetailComponent } from './employee-detail.component';
+import { AngularFontAwesomeModule } from 'angular-font-awesome'
+
+import { EmployeeService } from '../services/employee.service'
+import { MockEmployeesService } from '../services/employee.service.fake'
+import { EmployeeDetailComponent } from './employee-detail.component'
 
 describe('EmployeeDetailComponent', () => {
-  let component: EmployeeDetailComponent;
-  let fixture: ComponentFixture<EmployeeDetailComponent>;
+  let component: EmployeeDetailComponent
+  let fixture: ComponentFixture<EmployeeDetailComponent>
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EmployeeDetailComponent ]
-    })
-    .compileComponents();
-  }));
+      declarations: [EmployeeDetailComponent],
+      imports: [AngularFontAwesomeModule, RouterTestingModule],
+      providers: [{ provide: EmployeeService, useClass: MockEmployeesService }],
+    }).compileComponents()
+  }))
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(EmployeeDetailComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    fixture = TestBed.createComponent(EmployeeDetailComponent)
+    component = fixture.componentInstance
+    fixture.detectChanges()
+  })
 
   it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+    expect(component).toBeTruthy()
+  })
+})
