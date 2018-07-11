@@ -1,21 +1,42 @@
 import { HttpClient } from '@angular/common/http'
 import { Injectable } from '@angular/core'
 
-import { Observable } from 'rxjs'
+import { BehaviorSubject, Observable } from 'rxjs'
 
 import { EmployeePage } from '../models/employee-page.model'
 import { Employee } from '../models/employee.model'
+
+export interface PageOptions {
+  page: string
+  size: string
+  sortField: string
+  sortDirection: string
+}
 
 @Injectable()
 export class EmployeeService {
   private tableName = 'employees'
 
-  constructor(private httpClient: HttpClient) {}
+  currentPage: BehaviorSubject<EmployeePage>
 
-  listPage(page: number = 0, size: number = 10): Observable<EmployeePage> {
-    return this.httpClient.get<EmployeePage>(this.buildUrl(), {
-      params: { size: String(size), page: String(page) },
-    })
+  constructor(private httpClient: HttpClient) {
+    this.currentPage = new BehaviorSubject<EmployeePage>(new EmployeePage())
+  }
+
+  getPage(options: PageOptions): void {
+    const ops = {
+      page: options.page,
+      size: options.size,
+      sort: options.sortField,
+    }
+    ops[options.sortField + '.dir'] = options.sortDirection
+
+    this.httpClient
+      .get<EmployeePage>(this.buildUrl(), { params: ops })
+      .subscribe(
+        page => this.currentPage.next(new EmployeePage().fromJSON(page)),
+        error => this.currentPage.error(error)
+      )
   }
 
   get(id: string): Observable<Employee> {

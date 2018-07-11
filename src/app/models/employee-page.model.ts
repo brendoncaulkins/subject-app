@@ -19,12 +19,12 @@ export class EmployeePage implements IEmployeePage {
     public first: boolean = false,
     public last: boolean = false,
     public number: number = NaN,
-    public numberOfElements: number = NaN,
+    public numberOfElements: number = 0,
     public pageable: any = null,
-    public size: number = NaN,
+    public size: number = 0,
     public sort: any = null,
-    public totalElements: number = NaN,
-    public totalPages: number = NaN
+    public totalElements: number = 0,
+    public totalPages: number = 0
   ) {}
 
   fromJSON(json: any): any {

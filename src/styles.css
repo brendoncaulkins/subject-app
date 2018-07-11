@@ -17,6 +17,7 @@ body {
 }
 body,
 input[text],
+select,
 button {
   color: #888;
   font-family: Cambria, Georgia;
@@ -78,11 +79,19 @@ can be found in the LICENSE file at http://angular.io/license
 
 /* subject-app additions*/
 label,
-input {
+input,
+select {
   display: block;
+}
+label {
+  white-space: nowrap;
 }
 input.full-width {
   width: 100%;
+}
+
+.large-icon {
+  font-size: 200%;
 }
 
 .message-container {

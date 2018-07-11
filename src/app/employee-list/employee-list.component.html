@@ -1,6 +1,47 @@
 <h3>Employee List</h3>
-<div fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap="10px">
-  <div fxFlex *ngFor="let employee of employeeList.value">
-    <app-employee-list-card [employee]="employee"></app-employee-list-card>
+<div fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="20px">
+  <div fxFlex>
+    <form [formGroup]="pageOptionsForm">
+      <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="25px">
+        <div fxFlex="1 1 24%">
+          <label for="sort-by-field">Sort By:</label>
+          <select id="sort-by-field" formControlName="sortByField">
+            <option *ngFor="let field of sortBy" [value]="field.value">{{ field.name }}</option>
+          </select>
+        </div>
+        <div fxFlex="1 1 24%">
+          <label for="sort-direction">Sort Dir:</label>
+          <select id="sort-direction" formControlName="sortDirection">
+            <option *ngFor="let dir of sortDirections" [value]="dir.value">{{ dir.name }}</option>
+          </select>
+        </div>
+        <div fxFlex="1 1 24%">
+          <label for="page-size">Page Size:</label>
+          <select id="page-size" formControlName="pageSize">
+            <option *ngFor="let size of pageSizes" [value]="size">{{ size }} Records</option>
+          </select>
+        </div>
+        <div fxFlex="1 1 24%">
+          <label for="page-number">Page Number:</label>
+          <select id="page-number" formControlName="pageNumber">
+            <option *ngFor="let p of pages, let i = index" [value]="i">Page #{{ i+1 }} of {{ currentPage.totalPages }}</option>
+          </select>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div *ngIf="currentPage.content && currentPage.content.length > 0" fxFlex fxFlexAlign="stretch" fxLayout="column" fxLayoutAlign="start stretch"
+    fxLayoutGap="10px">
+    <div fxFlex *ngFor="let employee of currentPage.content">
+      <app-employee-list-card [employee]="employee"></app-employee-list-card>
+    </div>
+  </div>
+  <div *ngIf="!currentPage.content || currentPage.content.length === 0" fxFlex class="message-container">
+    <div *ngIf="error" class="error">
+      <fa name="exclamation-triangle"></fa> {{ error }}
+    </div>
+    <div *ngIf="error === null">
+      <fa name="question-circle"></fa> No data found!
+    </div>
   </div>
 </div>
