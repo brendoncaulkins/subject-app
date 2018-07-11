@@ -13,6 +13,9 @@ import {
   EmployeeListCardComponent,
 } from './employee-list/employee-list-card/employee-list-card.component'
 import { EmployeeListComponent } from './employee-list/employee-list.component'
+import {
+  ListControlsComponent,
+} from './employee-list/list-controls/list-controls.component'
 import { HeaderComponent } from './header/header.component'
 import {
   AddressFormComponent,
@@ -22,9 +25,10 @@ import {
 } from './info-collection/address-form/address-suggestions/address-suggestions.component'
 import { InfoCollectionComponent } from './info-collection/info-collection.component'
 import { NotFoundComponent } from './not-found/not-found.component'
-import { AddressValidationService } from './services/address-validation.service'
-import { EmployeeService } from './services/employee.service';
-import { ListControlsComponent } from './employee-list/list-controls/list-controls.component'
+import {
+  AddressValidationService,
+} from './services/address-validation/address-validation.service'
+import { EmployeeService } from './services/employee.service'
 
 @NgModule({
   declarations: [

@@ -4,10 +4,10 @@ import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angul
 
 import { AngularFontAwesomeModule } from 'angular-font-awesome'
 
-import { AddressValidationService } from '../../services/address-validation.service'
+import { AddressValidationService } from '../../services/address-validation/address-validation.service'
 import {
   MockAddressValidationService,
-} from '../../services/address-validation.service.fake'
+} from '../../services/address-validation/address-validation.service.fake'
 import { AddressFormComponent } from './address-form.component'
 import {
   AddressSuggestionsComponent,

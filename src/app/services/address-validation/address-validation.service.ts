@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core'
 
 import { BehaviorSubject } from 'rxjs'
 
-import { Address } from '../models/address.model'
+import { Address } from '../../models/address.model'
 
 export interface IAddressValidationService {
   validationResults: BehaviorSubject<Address[]>

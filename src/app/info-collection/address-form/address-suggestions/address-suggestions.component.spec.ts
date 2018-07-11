@@ -1,9 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing'
 
-import { AddressValidationService } from '../../../services/address-validation.service'
+import { AddressValidationService } from '../../../services/address-validation/address-validation.service'
 import {
   MockAddressValidationService,
-} from '../../../services/address-validation.service.fake'
+} from '../../../services/address-validation/address-validation.service.fake'
 import { AddressSuggestionsComponent } from './address-suggestions.component'
 
 describe('AddressSuggestionsComponent', () => {

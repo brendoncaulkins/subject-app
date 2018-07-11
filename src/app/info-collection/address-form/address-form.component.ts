@@ -5,7 +5,7 @@ import { BehaviorSubject, Subscription } from 'rxjs'
 import { debounceTime } from 'rxjs/operators'
 
 import { Address } from '../../models/address.model'
-import { AddressValidationService } from '../../services/address-validation.service'
+import { AddressValidationService } from '../../services/address-validation/address-validation.service'
 
 export enum ValidationState {
   IDLE = 'IDLE',

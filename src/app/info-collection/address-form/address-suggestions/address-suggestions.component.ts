@@ -3,7 +3,7 @@ import { Component, OnDestroy, OnInit, Output } from '@angular/core'
 import { Subject, Subscription } from 'rxjs'
 
 import { Address } from '../../../models/address.model'
-import { AddressValidationService } from '../../../services/address-validation.service'
+import { AddressValidationService } from '../../../services/address-validation/address-validation.service'
 
 @Component({
   selector: 'app-address-suggestions',

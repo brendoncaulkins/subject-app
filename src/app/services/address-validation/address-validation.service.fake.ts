@@ -1,6 +1,6 @@
 import { BehaviorSubject } from 'rxjs'
 
-import { Address } from '../models/address.model'
+import { Address } from '../../models/address.model'
 import { IAddressValidationService } from './address-validation.service'
 
 export class MockAddressValidationService implements IAddressValidationService {
