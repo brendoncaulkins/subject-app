@@ -23,7 +23,7 @@ export class AddressValidationService implements IAddressValidationService {
     this.validationResults = new BehaviorSubject<Address[]>(null)
   }
 
-  checkAddress(address: Address) {
+  checkAddress(address: Address): void {
     if (address.isEmpty()) {
       this.validationResults.next(null)
     } else {
@@ -45,7 +45,7 @@ export class AddressValidationService implements IAddressValidationService {
       city: address.city ? address.city : null,
       state: address.state ? address.state : null,
       zipcode: address.zipCode,
-      match: 'strict',
+      match: 'range',
     }
   }
 
