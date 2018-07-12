@@ -1,0 +1,6 @@
+<div *ngFor="let a of sections, let i = index">
+  <div>
+    <a (click)="toggle(i)">Toggle {{ i + 1 }}</a>
+  </div>
+  <div [hidden]="!openPanel.value.includes(i)">Content</div>
+</div>

@@ -28,7 +28,8 @@ import { NotFoundComponent } from './not-found/not-found.component'
 import {
   AddressValidationService,
 } from './services/address-validation/address-validation.service'
-import { EmployeeService } from './services/employee/employee.service'
+import { EmployeeService } from './services/employee/employee.service';
+import { TestComponentComponent } from './test-component/test-component.component'
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { EmployeeService } from './services/employee/employee.service'
     EmployeeListCardComponent,
     EmployeeDetailComponent,
     ListControlsComponent,
+    TestComponentComponent,
   ],
   imports: [
     BrowserModule,
